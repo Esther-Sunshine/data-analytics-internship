@@ -110,7 +110,45 @@ analytically, and opened a formal cross-track integration with Data Science.
 The original source file is never modified. All derived work is saved separately as
 `HealthConnect_Appointment_Data_processed.csv` (adds lead-time band, prior-no-show band, distance
 band, and risk-tier columns).
+## Week 7 — Testing, Refinement & End-to-End Validation
 
+Week 7 moved the Data Analytics track from *validated* to *tested*: every core
+KPI, effect size, and model result from Week 6 was either reproduced from raw
+data, backed with a formal significance test, or checked for stability under
+resampling.
+
+**What was tested**
+- Reproducibility of all 5 KPIs, the Cramér's V effect-size ranking, and the
+  multivariate logistic regression — all reproduced exactly from raw data.
+- The Sunday-appointment anomaly and reminder-channel claims, previously
+  argued descriptively, retested with formal chi-square tests.
+- The highest-priority patient segment definition, retested across four
+  threshold combinations for sensitivity.
+- The self-built baseline model (Week 6), retested under 5-fold stratified
+  cross-validation instead of a single train/test split.
+
+**Key findings**
+- The reminder-channel claim only partially held up: SMS beats WhatsApp
+  significantly (p=0.023), but not Email (p=0.448) — recommendation narrowed
+  accordingly.
+- The high-risk segment's 80.9% no-show rate is threshold-sensitive
+  (64–81% depending on definition) — reframed as a graduated risk tier.
+- Logistic Regression outperformed Random Forest on every cross-validation
+  fold, not just on average — now the recommended candidate model.
+- Resolved a Week 6 limitation: the high-risk-segment recall test (n=20,
+  too small to trust) was retested via out-of-fold prediction (n=66):
+  recall 100%, precision 81.8%.
+- New issue found: model errors cluster by booking lead time — flagged for
+  Week 8 threshold tuning.
+
+**Cross-track status:** Data Science has not responded since the Week 6
+outreach. Rather than leave the dependency unaddressed, Week 7 re-tested the
+model estimate DS would eventually need to benchmark against — see
+`docs/week7_crosstrack_evidence.md`.
+
+**Files added:** `HealthConnect_Week7_Analytics_Testing_Refinement_Report.docx`,
+`HealthConnect_Week7_Testing_Refinement_Notebook.ipynb`,
+`HealthConnect_Week7_Project_Summary.docx`, `docs/week7_crosstrack_evidence.md`
 ## Current status
 
 Track-specific Week 6 output: **complete**.
