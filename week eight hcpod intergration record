@@ -1,0 +1,29 @@
+# Week 8 — HC-POD Final Integration Record
+
+## Status
+The Data Science cross-track dependency opened in Week 6, and re-tested against in Week 7, remains **unresolved**. No response was received from the Data Science track intern at any point across Weeks 6, 7, or 8.
+
+## Timeline
+| Week | Action | Outcome |
+|---|---|---|
+| 6 | Outreach sent to Data Science intern requesting: (1) confirmation of features used in their baseline model, (2) model performance on the defined high-risk segment, (3) feature-importance ranking. | No response by Week 6 deadline. |
+| 6 | In the absence of a response, a self-built baseline model was constructed using Data Analytics' own recommended features, to avoid submitting untested recommendations. | Logistic Regression vs. Random Forest compared on a single train/test split. |
+| 7 | Dependency re-tested rather than left static: the Week 6 single-split model estimate was strengthened into a 5-fold cross-validated benchmark, so it would be immediately usable the moment Data Science engaged. | LR recall 66.0% ± 1.9% (stable); high-risk segment recall 100%, precision 81.8% (n=66). |
+| 8 | Final check for a response before submission. | None received. Dependency formally closed as unresolved for this internship cohort. |
+
+## What was made available to Data Science (never claimed back)
+- Validated, multivariate-confirmed risk-driver ranking (lead time, prior no-shows, distance, reminder status).
+- Effect-size ranking (Cramér's V).
+- Refined reminder-channel finding (SMS vs. WhatsApp, statistically significant; SMS vs. Email, inconclusive).
+- A cross-validated model benchmark (Logistic Regression, 66.0% ± 1.9% recall) to compare any independently-built model against.
+
+## What was never received
+- Confirmation of which features Data Science used in their own model.
+- Data Science's model performance on the Data Analytics-defined high-risk segment.
+- Data Science's feature-importance ranking.
+
+## Resolution for final submission
+Since no counterpart model was ever provided, the self-built, cross-validated Logistic Regression model stands as the final predictive component for this track's contribution, clearly labelled throughout as self-built rather than the product of genuine two-way cross-track collaboration. This is reported factually in the Week 8 Final Integration Package and in the individual presentation video, rather than represented as a completed integration.
+
+## Other tracks (Project Management, ML Engineering, GenAI)
+No outreach was attempted with these tracks, as no dependency requiring their input was identified for the Data Analytics track's Week 8 deliverable. Their potential future integration points are noted as open opportunities in the End-to-End Integration Walkthrough (Section 5–7), not as attempted-and-failed dependencies.
